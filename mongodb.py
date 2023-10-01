@@ -8,7 +8,7 @@ load_dotenv()  # take environment variables from .env.
 user = os.getenv('MONGO_USER')
 password = os.getenv('MONGO_PASSWORD')
 
-uri = "mongodb+srv://rogracouch:<password>@cluster0.wmueyjs.mongodb.net/?retryWrites=true&w=majority"
+uri = "mongodb+srv://{user}:{password}@cluster0.8jy5fgi.mongodb.net/?retryWrites=true&w=majority"
 
 # Create a new client and connect to the server
 client = MongoClient(uri)
@@ -20,4 +20,3 @@ try:
 except Exception as e:
     print(e)
 
-#client.get_database('prueba').get_collection('rogra').insert_one(document={"marca": "opel", "modelo": "omega"})

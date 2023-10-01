@@ -3,7 +3,6 @@ from flask import request
 
 from yahoo_data_fetcher import get_price, set_price
 
-
 app = Flask(__name__)
 
 
@@ -14,14 +13,13 @@ def hello_world():
 
 @app.route("/api/<ticker>", methods=["GET"])
 def get_ticker(ticker):
-   return get_price(ticker)
+    return get_price(ticker)
 
 
 @app.route("/api/<ticker>", methods=["POST"])
 def post_ticker(ticker):
     document = get_price(ticker)
-    set_price(document)
-    return document
+    return set_price(document)
 
 
 @app.route("/api/multiple/")
