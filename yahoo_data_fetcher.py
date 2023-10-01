@@ -1,6 +1,7 @@
 import requests
 from mongodb import client
 
+
 def get_price(ticker: str, verbose: bool = False) -> dict:
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
     user_agent = {'User-agent': 'Mozilla/5.0'}
@@ -24,5 +25,5 @@ def get_price(ticker: str, verbose: bool = False) -> dict:
 
 
 def set_price(document: dict):
-    _ = client.get_database('tickers').get_collection('rafa').insert_one(document=document)
-    return "ok"
+    _ = client.get_database('tickers').get_collection('rogra').insert_one(document=document)
+    return 'ok'

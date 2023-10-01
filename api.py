@@ -14,13 +14,14 @@ def hello_world():
 
 @app.route("/api/<ticker>", methods=["GET"])
 def get_ticker(ticker):
-    return get_price(ticker)
+   return get_price(ticker)
 
 
 @app.route("/api/<ticker>", methods=["POST"])
 def post_ticker(ticker):
     document = get_price(ticker)
-    return set_price(document)
+    set_price(document)
+    return document
 
 
 @app.route("/api/multiple/")
