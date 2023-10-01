@@ -7,20 +7,17 @@ def get_price(ticker: str, verbose: bool = False) -> dict:
     user_agent = {'User-agent': 'Mozilla/5.0'}
     r = requests.get(url=url, headers=user_agent).json()
 
-    apertura = "APERTURA: "
-    cierre = "CIERRE :"
-
-    precio_apertura = r['chart']['result'][0]['meta']['regularMarketPrice']
-    precio_cierre = r['chart']['result'][0]['meta']['chartPreviousClose']
+    aperture = r['chart']['result'][0]['meta']['regularMarketPrice']
+    close = r['chart']['result'][0]['meta']['chartPreviousClose']
     currency = r['chart']['result'][0]['meta']['currency']
 
     if verbose:
-        print(f"{ticker}:   {apertura}{currency} {precio_apertura}, {cierre}{currency} {precio_cierre}")
+        print(f"{ticker}:   {currency} {aperture},  {currency} {close}")
     return {
         "ticker": ticker,
-        "APERTURA": precio_apertura,
-        "CIERRE": precio_cierre,
-        "moneda": currency
+        "b": aperture,
+        "a": close,
+        "USD": currency
     }
 
 
