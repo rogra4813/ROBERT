@@ -22,8 +22,17 @@ Crear el api
 
 ![image](https://github.com/rogra4813/ROBERT/assets/144501789/5cda9cd6-10d0-46a6-a29d-b9c8b6d57b83)
 
-#Paso 4
+# Paso 4
 HAcer commit y Push
+
+# Paso 5
+Subir a la DB
+
+Hice todo el procedimiento pero no cargó
+![image](https://github.com/rogra4813/ROBERT/assets/144501789/745ba5a9-d033-4a30-8ff5-729ce03f899a)
+
+
+
 
 
 
