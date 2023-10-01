@@ -3,6 +3,7 @@ from flask import request
 
 from yahoo_data_fetcher import get_price, set_price
 
+
 app = Flask(__name__)
 
 

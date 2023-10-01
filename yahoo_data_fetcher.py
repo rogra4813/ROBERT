@@ -7,20 +7,20 @@ def get_price(ticker: str, verbose: bool = False) -> dict:
     user_agent = {'User-agent': 'Mozilla/5.0'}
     r = requests.get(url=url, headers=user_agent).json()
 
-    aperture = r['chart']['result'][0]['meta']['regularMarketPrice']
-    close = r['chart']['result'][0]['meta']['chartPreviousClose']
+    apertura = r['chart']['result'][0]['meta']['regularMarketPrice']
+    cierre = r['chart']['result'][0]['meta']['chartPreviousClose']
     currency = r['chart']['result'][0]['meta']['currency']
 
     if verbose:
-        print(f"{ticker}:   {currency} {aperture},  {currency} {close}")
+        print(f"{ticker}:  {currency} {apertura}   {currency} {cierre}")
     return {
         "ticker": ticker,
-        "b": aperture,
-        "a": close,
-        "USD": currency
+        "apertura": apertura,
+        "cierre": cierre,
+        "moneda": currency
     }
 
 
 def set_price(document: dict):
-    _ = client.get_database('tickers').get_collection('robert').insert_one(document=document)
+    _ = client.get_database('tickers').get_collection('rafa').insert_one(document=document)
     return 'ok'
